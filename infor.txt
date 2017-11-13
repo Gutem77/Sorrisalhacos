@@ -1,0 +1,33 @@
+Usando PHPMyAdmin com Cloud9
+Aqui vamos explicar como instalar uma instância do PHPMyAdmin diretamente no seu espaço de trabalho. Cada espaço de trabalho executa seu próprio banco de dados e uma cópia do PHPMyAdmin.
+
+Primeiro, crie um espaço de trabalho PHP para que você tenha PHP, MySQL e Apache instalados imediatamente. Você pode então ter certeza de que o MySQL está instalado executando:
+
+Instalação mysql-ctl
+Em seguida, instale o phpMyAdmin:
+
+phpmyadmin-ctl install
+Após a conclusão da instalação, você só quer se certificar de que o mysql está sendo executado uma vez mais:
+
+mysql-ctl start
+Depois de instalar o phpMyAdmin, você recebeu um link para acessar o PHPMyAdmin, que seguirá o padrão de: https: // [workspacename] - [nome de usuário] .c9users.io / phpmyadmin. A partir desse link, você pode fazer login com seu nome de usuário Cloud9 e uma senha em branco.
+
+Criando um banco de dados
+Você pode criar um banco de dados clicando na aba "Bancos de dados" na parte superior. Nesta página, você verá um campo "Criar banco de dados" onde você pode inserir o nome e criar um novo banco de dados.
+
+Se você quiser mais ajuda usando o software, consulte o PHPMyAdmin docs368 oficial.
+
+Segurança
+Como o MySQL tem uma senha em branco por padrão e phpMyAdmin usa as mesmas credenciais do MySQL, o phpMyAdmin também possui uma senha em branco por padrão. Isso é ótimo porque torna a configuração significativamente mais fácil para os usuários. Além disso, uma vez que os desenvolvedores geralmente não (e muitas vezes não devem) colocam dados sensíveis / importantes em um ambiente de desenvolvimento como o Cloud9, não há senha no phpMyAdmin raramente é um problema.
+
+Se você tiver dados confidenciais no banco de dados em seu espaço de trabalho ou se se sentir mais seguro bloqueando seu banco de dados, você pode simplesmente mudar sua senha do MySQL e bloquear seu banco de dados como quiser.
+
+Se meu nome de usuário do Cloud9 for "myUser", eu posso mudar minha senha para "testar" executando:
+
+SET PASSWORD PARA 'myUser' @ '%' = PASSWORD ('test');
+A partir deste ponto, entraremos na CLI para o MySQL fazendo:
+
+mysql -u myUser -p
+Em seguida, será solicitada a minha senha.
+
+ https://sorrisalhacos-gutem77.c9users.io/phpmyadmin
